@@ -1,12 +1,12 @@
 class SessionsController < ApplicationController
-  before_action :find_session_user, :only, [:create, :destroy]
 
   def new; end
 
   def create 
+    user = User.find_by(email: session_user_params[:email])
     # @user&.authenticate() == @user && @user.authenticate()
-    if @user&.authenticate(params[:session][:password])
-      session[:user_id] = @user.id
+    if user&.authenticate(session_user_params[:password])
+      session[:user_id] = user.id
       redirect_to '/', notice: '您已成功登入。'
     else
       render :new
@@ -21,7 +21,7 @@ class SessionsController < ApplicationController
 
   private
 
-  def find_session_user
-    @user = User.find_by(email: [:session][:email])
+  def session_user_params
+    params.require(:session).permit(:email, :password)
   end
 end
