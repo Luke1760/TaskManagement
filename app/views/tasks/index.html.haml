@@ -1,5 +1,5 @@
 %h1 任務列表
-= search_form_for @query, class: 'mb-5' do |f|
+= search_form_for @q, class: 'mb-5' do |f|
   .form-group.row
     = f.label :name_cont, '任務名稱', class: 'col-sm-2 col-form-label'
     .col-sm-10
@@ -17,8 +17,8 @@
 %table.table.table-hover
   %thead.thead-default
     %tr
-      %th= sort_link(@query, :name, '任務名稱', [:name, created_at: :desc])
-      %th= Task.human_attribute_name(:created_at)
+      %th= sort_link(@q, :name, '任務名稱', [:name, created_at: :desc])
+      %th= Task.human_attribute_name('建立時間')
       %th
   %tbody
     - @tasks.each do |task|
