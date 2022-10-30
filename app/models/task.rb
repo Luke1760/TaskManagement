@@ -1,5 +1,6 @@
 class Task < ApplicationRecord
 
+  belongs_to :user
   validate  :set_nameless_name
   validates :name, presence: true, length: { maximum: 30 }
 
