@@ -1,4 +1,5 @@
 class TasksController < ApplicationController
+  before_action :set_task, only: [:show, :edit, :update, :destroy]
 
   def index
     @query = current_user.tasks.ransack(params[:query])
@@ -24,16 +25,11 @@ class TasksController < ApplicationController
     end
   end
 
-  def show 
-    @task = Task.find(params[:id])
-  end
+  def show ;end
 
-  def edit 
-    @task = Task.find(params[:id])
-  end
+  def edit ;end
 
   def update 
-    @task = Task.find(params[:id])
 
     if @task.update(set_task_params)
       redirect_to task_path(@task), notice: "已更新任務「#{@task.name}」。"
@@ -43,7 +39,6 @@ class TasksController < ApplicationController
   end
 
   def destroy
-    @task = Task.find(params[:id])
 
     @task.destroy
     redirect_to tasks_path, notice: "已刪除任務「#{@task.name}」。"
@@ -53,5 +48,9 @@ class TasksController < ApplicationController
 
   def set_task_params
     params.require(:task).permit(:name, :description)
+  end
+
+  def set_task
+    @task = Task.find(params[:id])
   end
 end
