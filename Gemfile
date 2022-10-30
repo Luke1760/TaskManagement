@@ -67,3 +67,6 @@ gem 'html2haml'
 
 # bootstrap to style views
 gem 'bootstrap'
+
+# Ransack will help you easily add searching to your Rails application, without any additional dependencies.
+gem 'ransack'
