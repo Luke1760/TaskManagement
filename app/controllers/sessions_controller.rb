@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
-
+  skip_before_action :login_required
+  
   def new; end
 
   def create 
@@ -14,7 +15,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    session[:user_id].destroy
+    reset_session
 
     redirect_to '/', alert: '您已登出。'
   end
