@@ -15,7 +15,7 @@
       %td= @user.email
     %tr
       %th= User.human_attribute_name(:is_admin)
-      %td= @user.is_admin? ? '是' : '不是'
+      %td= @user.is_admin? ? 'O' : 'X'
     %tr
       %th= User.human_attribute_name(:created_at)
       %td= @user.created_at
