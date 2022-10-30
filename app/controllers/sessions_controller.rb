@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
   skip_before_action :login_required
-  
+
   def new; end
 
   def create 
@@ -15,6 +15,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+    # Resets the session by clearing out all the objects stored within and initializing a new session object.
     reset_session
 
     redirect_to '/', alert: '您已登出。'
