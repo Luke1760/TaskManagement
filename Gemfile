@@ -65,3 +65,5 @@ end
 gem 'haml-rails'
 gem 'html2haml'
 
+# bootstrap to style views
+gem 'bootstrap'
