@@ -1,0 +1,14 @@
+%h1 任務列表
+= search_form_for @query, class: 'mb-5' do |f|
+  .form-group.row
+    = f.label :name_cont, '任務名稱', class: 'col-sm-2 col-form-label'
+    .col-sm-10
+      = f.search_field :name_cont, class: 'form-control', style: 'width: auto;'
+
+  .form-group.row
+    = f.label :created_at, '建立日期', class: 'col-sm-2 col-form-label'
+    .col-sm-10
+      = f.search_field :created_at, class: 'form-control', style: 'width: auto;'
+%br
+= link_to('新增任務', new_task_path, class: 'btn btn-primary')
+  
