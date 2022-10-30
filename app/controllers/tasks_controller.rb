@@ -14,7 +14,7 @@ class TasksController < ApplicationController
   end
 
   def create 
-    @task = current_user.tasks.new(set_task_params)
+    @task = Task.new(set_task_params)
 
     if @task.save 
       Rails.logger.info "tasks: #{@task.attributes.inspect}"
@@ -26,6 +26,20 @@ class TasksController < ApplicationController
 
   def show 
     @task = Task.find(params[:id])
+  end
+
+  def edit 
+    @task = Task.find(params[:id])
+  end
+
+  def update 
+    @task = Task.find(params[:id])
+
+    if @task.update(set_task_params)
+      redirect_to task_path(@task), notice: "已更新任務「#{@task.name}」。"
+    else
+      render :edit
+    end
   end
 
   private 
