@@ -15,7 +15,7 @@ class TasksController < ApplicationController
   end
 
   def create 
-    @task = Task.new(set_task_params)
+    @task = current_user.tasks.new(set_task_params)
 
     if @task.save 
       Rails.logger.info "tasks: #{@task.attributes.inspect}"

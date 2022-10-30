@@ -1,8 +1,3 @@
-- if @user.errors.present?
-  %ul#error_explanation
-    - @user.errors.full_messages.each do |msg|
-      %li = msg
-
 = form_with model: [:admin, @user], local: true do |f|
   .form-group
     = f.label :name, '用戶名稱'
