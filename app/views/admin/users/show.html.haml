@@ -1,0 +1,27 @@
+%h1 用戶資訊
+
+.nav.justify-content-end
+  = link_to('用戶列表', admin_users_path, class: 'nav-link')
+%table.table.table-hover
+  %tbody
+    %tr
+      %th= User.human_attribute_name(:id)
+      %td= @user.id
+    %tr
+      %th= User.human_attribute_name(:name)
+      %td= @user.name
+    %tr
+      %th= User.human_attribute_name(:email)
+      %td= @user.email
+    %tr
+      %th= User.human_attribute_name(:is_admin)
+      %td= @user.is_admin? ? '是' : '不是'
+    %tr
+      %th= User.human_attribute_name(:created_at)
+      %td= @user.created_at
+    %tr
+      %th= User.human_attribute_name(:updated_at)
+      %td= @user.updated_at
+
+= link_to('編輯', edit_admin_user_path(@user), class: 'btn btn-primary mr-3')
+= link_to('刪除', [:admin, @user], method: :delete, data: { confirm: "確定刪除 「#{@user.name}」?"}, class: 'btn btn-danger')
