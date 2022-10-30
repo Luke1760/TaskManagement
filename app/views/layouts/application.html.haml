@@ -8,4 +8,8 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
+    .app-title.navbar.navbar-expand-md.navbar-light.bg-light
+      .navbar-brand TaskManagement
+      %ul.navbar.nav.ml-auto
+        %li.nav-item=link_to('登入', login_path, class: 'nav-link')
     = yield
