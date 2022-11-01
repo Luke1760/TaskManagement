@@ -7,6 +7,9 @@ class TasksController < ApplicationController
 
     respond_to do |format|
       format.html
+      format.csv {
+        send_data(@tasks.generate_csv, filename: "tasks-#{Time.zone.now.strftime('%Y%m%d%S')}.csv" )
+      }
     end
   end
 
