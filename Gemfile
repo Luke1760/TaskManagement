@@ -77,3 +77,6 @@ gem 'ransack'
 
 # pry-rails for debugging
 gem 'pry-rails'
+
+# Use ActiveStorage variant
+gem 'mini_magick'
