@@ -6,7 +6,7 @@ class Task < ApplicationRecord
   
   default_scope { order(created_at: :desc) }
 
-  has_one_attached :avatar
+  has_one_attached :image
 
   def self.csv_attributes 
     [:name, :description, :created_at, :updated_at]

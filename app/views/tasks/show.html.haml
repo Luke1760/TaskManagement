@@ -20,8 +20,8 @@
       %th= Task.human_attribute_name(:updated_at)
       %td= @task.updated_at  
     %tr 
-      %th= Task.human_attribute_name(:avatar)
-      %td= image_tag @task.avatar.variant(resize: '150x150') if @task.avatar.attached?
+      %th= Task.human_attribute_name(:image)
+      %td= image_tag @task.image.variant(resize: '150x150') if @task.image.attached?
       
 = link_to('編輯', edit_task_path, class: 'btn btn-primary mr-3')
 = link_to('刪除', @task, method: :delete, data: { confirm: "確定刪除 「#{@task.name}」?"}, class: 'btn btn-danger')
