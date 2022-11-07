@@ -80,3 +80,6 @@ gem 'pry-rails'
 
 # Use ActiveStorage variant
 gem 'mini_magick'
+
+# page 
+gem 'kaminari'
