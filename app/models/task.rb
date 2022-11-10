@@ -26,4 +26,7 @@ class Task < ApplicationRecord
   def set_nameless_name
     self.name = '沒有該用戶' if name.nil?
   end
+
+
+  
 end

@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+# tasks = []
+
+# 100.times do |i|
+#   tasks << Task.create!(name: "Task-#{i}", description: "Description--#{i}", user_id: 1)
+# end
