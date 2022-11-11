@@ -1,0 +1,5 @@
+---
+zh-TW:
+  activerecord:
+    models:
+      task: 任務
