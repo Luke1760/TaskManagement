@@ -13,3 +13,5 @@ development:
 production:
   adapter: postgresql
   encoding: unicode
+
+  
