@@ -83,3 +83,6 @@ gem 'mini_magick'
 
 # page 
 gem 'kaminari'
+
+# font-awesome
+gem 'font-awesome-rails'
