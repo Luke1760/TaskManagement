@@ -1,7 +1,7 @@
 %h1 任務列表
 
 %br
-= link_to('新增任務', new_task_path, class: 'btn btn-primary mr-3')
+= link_to('新增任務', new_task_path, class: 'btn btn-primary')
 %br 
 %br 
 .mb-3 
@@ -21,8 +21,10 @@
         %td= link_to(task.name, task_path(task))
         %td= task.created_at
         %td
-          = link_to('編輯', edit_task_path(task), class: 'btn btn-primary mr-3')
-          = link_to('刪除', task, method: :delete, data: { confirm: "確定刪除 「#{task.name}」?"}, class: 'btn btn-danger')
+          = link_to(edit_task_path(task), class: 'btn btn-default mr-3')  do
+            %i.fa.fa-pencil.fa-fw
+          = link_to(task, method: :delete, data: { confirm: "確定刪除 「#{task.name}」?"}, class: 'btn btn-default') do
+            %i.fa.fa-trash.fa-fw
 
 = link_to('下載', tasks_path(format: :csv), class: 'btn btn-primary mb-3')
 
