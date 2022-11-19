@@ -4,6 +4,8 @@
 = link_to('新增任務', new_task_path, class: 'btn btn-primary')
 %br 
 %br 
+= render partial: 'sort_tasks', locals: { q: @q }
+%br
 .mb-3 
   = paginate(@tasks)
 %p   
